@@ -2,7 +2,6 @@
 #include <iomanip>
 #include <sstream>
 
-
 std::string get_middle_string(std::string const& input_string, size_t new_string_length)
 {
     size_t const input_string_length = input_string.length();
@@ -19,6 +18,5 @@ std::uint32_t middle_square(std::uint32_t initial, std::size_t number_of_digits)
 
     stream << std::setw(number_of_digits) << std::setfill('0') << std::to_string(num);
 
-    return std::stoi(get_middle_string(stream.str(), number_of_digits/2));
+    return std::stoi(get_middle_string(stream.str(), number_of_digits / 2));
 }
-

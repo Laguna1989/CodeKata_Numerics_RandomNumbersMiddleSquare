@@ -1,14 +1,13 @@
+#include "middle_square.hpp"
 #include <gtest/gtest.h>
 #include <sstream>
-#include "middle_square.hpp"
 
 TEST(MiddleSquareDistribution, FullDistribution)
 {
     std::uint32_t seed = 1234;
-    std::map<std::uint32_t, std::uint32_t > distribution;
+    std::map<std::uint32_t, std::uint32_t> distribution;
 
-    for (int i = 0; i != 1000; ++i)
-    {
+    for (int i = 0; i != 1000; ++i) {
         seed = middle_square(seed, 8);
         if (distribution.count(seed) == 0) {
             distribution[seed] = 0;
@@ -16,13 +15,10 @@ TEST(MiddleSquareDistribution, FullDistribution)
         distribution[seed]++;
     }
 
-    for (auto const& kvp : distribution)
-    {
-        std::cout << kvp.first << " " <<  kvp.second << std::endl;
+    for (auto const& kvp : distribution) {
+        std::cout << kvp.first << " " << kvp.second << std::endl;
     }
-
 }
-
 
 TEST(MiddleSquareDistribution, LastDecimalDigit)
 {
