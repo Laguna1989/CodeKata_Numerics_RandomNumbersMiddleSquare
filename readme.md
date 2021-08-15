@@ -19,7 +19,7 @@ Please note:
   They will detect most common issues. A good example is the BigCrush test
   from [TestU01](http://simul.iro.umontreal.ca/testu01/tu01.html) test suite.
 * In almost all cases it is advised to use an existing random number generator. A common recommendation is
-  the [Mersenn Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is available staritng with
+  the [Mersenne Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is available starting with
   C++11.
 
 ## The Middle Square algorithm
