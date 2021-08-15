@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "middle_square.hpp"
+#include <gtest/gtest.h>
 
 TEST(MiddleSquareTest, CorrectResultFor0)
 {
