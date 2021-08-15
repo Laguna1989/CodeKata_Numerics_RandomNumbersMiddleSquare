@@ -13,8 +13,14 @@ a bad choice as a random number generator.
 Computers have a hard time with generating random values, as they behave in a deterministic way. However, they can still
 create pseudo random numbers, by making use of some clever algebraic rules.
 
-For high quality random numbers, it is recommended to use e.g.
-the [Mersenn Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is already available in C++11.
+Please note:
+
+* If in doubt about a pseudo random number generator, there are already available test frameworks that can be applied.
+  They will detect most common issues. A good example is the BigCrush test
+  from [TestU01](http://simul.iro.umontreal.ca/testu01/tu01.html) test suite.
+* In almost all cases it is advised to use an existing random number generator. A common recommendation is
+  the [Mersenn Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is available staritng with
+  C++11.
 
 ## The Middle Square algorithm
 
@@ -88,3 +94,5 @@ file `tests/middle_square_distribution.cpp`.
 # References
 
 * [Middle Square Method (wikipedia)](https://en.wikipedia.org/wiki/Middle-square_method)
+* [TestU01](http://simul.iro.umontreal.ca/testu01/tu01.html)
+* [Mersenn Twister 19937](https://www.cplusplus.com/reference/random/mt19937/)
