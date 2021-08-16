@@ -19,8 +19,7 @@ Please note:
   They will detect most common issues. A good example is the BigCrush test
   from [TestU01](http://simul.iro.umontreal.ca/testu01/tu01.html) test suite.
 * In almost all cases it is advised to use an existing random number generator. A common recommendation is
-  the [Mersenne Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is available starting with
-  C++11.
+  the [Mersenne Twister 19937](https://www.cplusplus.com/reference/random/mt19937/), which is available in most frameworks.
 
 ## The Middle Square algorithm
 
@@ -52,18 +51,18 @@ Let's take a look at an example:
 Let's start out with the actual implementation of the algorithm.
 
 * First, take care of the
-  function `std::string get_middle_string(std::string const& input_string, size_t new_string_length)` in the
-  file `src/middle_square.cpp`. The unit tests in `tests/get_middle_string_test.cpp` will help you through the
+  function `get_middle_string(input_string, new_string_length)` in the
+  file `src/middle_square`. The unit tests in `tests/get_middle_string_test` will help you through the
   implementation.
 * Next, implement the actual random number
-  generator, `std::uint32_t middle_square(std::uint32_t initial, std::size_t number_of_digits)` in the
-  file `src/middle_square.cpp`. The unit tests in `tests/middle_square_unit_test.cpp` will be helpful here.
+  generator, `middle_square(initial, number_of_digits)` in the
+  file `src/middle_square`. The unit tests in `tests/middle_square_unit_test` will be helpful here.
 
 ## Period of the generator
 
 One major downside of the Middle Square algorithm is the limited period. This means that after a certain amount of calls
 the sequence of "random" numbers repeats itself. Implement a test case for this in the
-file `tests/middle_square_period_tests.cpp`.
+file `tests/middle_square_period_test`.
 
 * Start with a test that calls
     * `std::uint32_t seed = 4;`
@@ -82,7 +81,7 @@ Question: Will the period be long enough for reasonable statistical sampling?
 ## Random number Distribution
 
 The limited period leads to problems when it comes to the distribution of random numbers. Implement your tests in the
-file `tests/middle_square_distribution.cpp`.
+file `tests/middle_square_distribution_test`.
 
 * Write a test, that records the distribution for  `seed = 1234` and `number_of_digits = 8` for 1000 random numbers.
   What can you observe?
